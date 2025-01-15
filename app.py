@@ -8,6 +8,7 @@ from flask import Flask, request, render_template, jsonify
 # Flask App Initialization
 app = Flask(__name__)
 openai.api_key = os.getenv("OPENAI_API_KEY")
+print(f"OPENAI_API_KEY: {os.getenv('OPENAI_API_KEY')}")
 
 # Function Definitions (from your script)
 def extract_date(item):
