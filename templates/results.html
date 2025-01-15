@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Summaries</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        body {
+            background-color: #fffbcc;
+            color: #000; /* All text is now black */
+        }
+        nav {
+            background-color: #333;
+            color: #ffeb3b;
+        }
+        nav a {
+            color: #ffeb3b;
+        }
+        footer {
+            background-color: #333;
+            color: #ffeb3b;
+            text-align: center;
+            padding: 1rem;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        article {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2, h3, p {
+            color: #000; /* Ensure all headings and paragraphs are black */
+        }
+    </style>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>Patient Portal</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Medical History</a></li>
+            <li><a href="/" role="button">Upload Another File</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Patient Medical Summaries</h2>
+        <p>Here are the summarized medical histories based on your uploaded data.</p>
+        {% for result in results %}
+        <article>
+            <h3>{{ result.name }}</h3>
+            <p>{{ result.summary }}</p>
+        </article>
+        {% endfor %}
+    </main>
+    <footer>
+        <p>© 2025 Patient Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>

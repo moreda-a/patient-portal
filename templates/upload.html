@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Medical History</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        body {
+            background-color: #fffbcc;
+            color: #000; /* All text is now black */
+        }
+        nav {
+            background-color: #333;
+            color: #ffeb3b;
+        }
+        nav a {
+            color: #ffeb3b;
+        }
+        footer {
+            background-color: #333;
+            color: #ffeb3b;
+            text-align: center;
+            padding: 1rem;
+        }
+        main {
+            max-width: 600px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+        h2, p, button {
+            color: #000; /* Ensure headings, paragraphs, and buttons are black */
+        }
+    </style>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>Patient Portal</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Medical History</a></li>
+            <li><a href="#" role="button">Contact Us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Upload Your Medical History</h2>
+        <p>Upload a JSON file containing your medical data, and we will summarize it for you.</p>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".json" required>
+            <button type="submit">Upload and Summarize</button>
+        </form>
+    </main>
+    <footer>
+        <p>© 2025 Patient Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>
