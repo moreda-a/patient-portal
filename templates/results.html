@@ -37,6 +37,11 @@
         h2, h3, p {
             color: #000; /* Ensure all headings and paragraphs are black */
         }
+        .section-heading {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -54,11 +59,30 @@
         <h2>Patient Medical Summaries</h2>
         <p>Here are the summarized medical histories based on your uploaded data.</p>
         {% for result in results %}
-        <article>
-            <h3>{{ result.name }}</h3>
-            <p>{{ result.summary }}</p>
-        </article>
-        {% endfor %}
+<article>
+    <h3>{{ result.name }}</h3>
+
+    <div class="section">
+        <p class="section-heading">Profile</p>
+        <p>{{ result.get('Profile', 'No profile available.') }}</p>
+    </div>
+
+    <div class="section">
+        <p class="section-heading">Insights</p>
+        <p>{{ result.get('Insights', 'No insights available.') }}</p>
+    </div>
+
+    <div class="section">
+        <p class="section-heading">Summary</p>
+        <p>{{ result.get('Summary', 'No summary available.') }}</p>
+    </div>
+
+    <div class="section">
+        <p class="section-heading">Anomalies</p>
+        <p>{{ result.get('Anomalies', 'No anomalies detected.') }}</p>
+    </div>
+</article>
+	{% endfor %}
     </main>
     <footer>
         <p>© 2025 Patient Portal. All rights reserved.</p>
